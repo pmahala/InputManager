@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1582630526 source:c:\codeblocksprojects\configurebuttoncontrols\main.cpp
+1582700109 source:c:\codeblocksprojects\configurebuttoncontrols\main.cpp
 	<iostream>
+	<stdlib.h>
 	"InputHandler.h"
+	"ButtonHelper.h"
 
 1582613393 source:c:\codeblocksprojects\configurebuttoncontrols\src\command.cpp
 	"Command.h"
@@ -22,15 +24,18 @@
 1582613869 c:\codeblocksprojects\configurebuttoncontrols\include\downcommand.h
 	"Command.h"
 
-1582634471 source:c:\codeblocksprojects\configurebuttoncontrols\src\inputhandler.cpp
+1582699740 source:c:\codeblocksprojects\configurebuttoncontrols\src\inputhandler.cpp
 	"InputHandler.h"
 	"UpCommand.h"
 	"DownCommand.h"
 	"ButtonHelper.h"
 
-1582622713 c:\codeblocksprojects\configurebuttoncontrols\include\inputhandler.h
+1582699741 c:\codeblocksprojects\configurebuttoncontrols\include\inputhandler.h
 	"Command.h"
 
-1582636600 c:\codeblocksprojects\configurebuttoncontrols\include\buttonhelper.h
+1582703074 c:\codeblocksprojects\configurebuttoncontrols\include\buttonhelper.h
 	<windows.h>
+
+1582702953 source:c:\codeblocksprojects\configurebuttoncontrols\src\buttonhelper.cpp
+	"ButtonHelper.h"
 

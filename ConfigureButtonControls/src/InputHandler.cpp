@@ -3,12 +3,14 @@
 #include "DownCommand.h"
 #include "ButtonHelper.h"
 
+
 using namespace button;
 
 InputHandler::InputHandler()
 {
     //ctor
     Input::init();
+    KeyCode::ResetKeyCode();
     UP_COMMAND = new UpCommand;
     DOWN_COMMAND = new DownCommand;
 }
@@ -22,15 +24,15 @@ InputHandler::~InputHandler()
 bool InputHandler::HandleInput()
 {
     Input::takeInput();
-    if(Input::isPressed(UP_BUTTON))
+    if(Input::isPressed(KeyCode::UP_BUTTON))
     {
         UP_COMMAND -> execute();
     }
-    else if(Input::isPressed(DOWN_BUTTON))
+    else if(Input::isPressed(KeyCode::DOWN_BUTTON))
     {
         DOWN_COMMAND -> execute();
     }
-    else if(Input::isPressed(EXIT_BUTTON))
+    else if(Input::isPressed(KeyCode::EXIT_BUTTON))
     {
         return false;
     }

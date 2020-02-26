@@ -5,14 +5,21 @@
 
 
 
+
 namespace button{
 
-    enum KeyCode {UP_BUTTON = 119, DOWN_BUTTON = 115, EXIT_BUTTON = 120}; //w,s,x
+    class KeyCode
+    {
+        public:
+            static void ResetKeyCode();
+            static void SetKeyCode(char up,char down);
+            static int UP_BUTTON;
+            static int DOWN_BUTTON;
+            //static int CURRENT_PRESS;
+            static int EXIT_BUTTON;
 
+    };
 
-
-
-    ///////////////////// INPUT CLASS ///////////////////////////////
     class Input{
     private:
         static HANDLE hIn;
@@ -23,51 +30,13 @@ namespace button{
 
 
     public:
-        static bool isPressed(KeyCode k);
+        static bool isPressed(int buttonPress);
         static void init();
         static void takeInput();
 
 
     };
 
-
-    HANDLE Input::hIn {};
-    INPUT_RECORD Input::inRec {};
-    DWORD Input::numRead {};
-    char Input::readChar {};
-
-
-
-    bool Input::isPressed(KeyCode k)
-    {
-
-        if(k == UP_BUTTON && readChar == (char)k)
-        {
-            return true;
-        }
-
-        else if( k == DOWN_BUTTON && readChar == (char)k)
-        {
-            return true;
-        }
-        else if(k == EXIT_BUTTON && readChar == (char)k)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    void Input::takeInput()
-    {
-        ReadConsoleInput(hIn,&inRec,1,&numRead);
-        readChar = inRec.Event.KeyEvent.uChar.AsciiChar;
-    }
-
-    void Input::init()
-    {
-        hIn = GetStdHandle(STD_INPUT_HANDLE);
-    }
 }
 
 
